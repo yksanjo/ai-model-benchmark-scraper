@@ -1,111 +1,82 @@
-# AI Model Benchmark Scraper 🤖
+# ai-model-benchmark-scraper
 
-A high-compute scraping project that collects, normalizes, and analyzes AI model benchmarks across HuggingFace, Papers with Code, and academic sources. Track model performance evolution and detect overclaiming.
+## Detailed Description
 
-## 🎯 Project Overview
+ai-model-benchmark-scraper is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-**Goal**: Build a comprehensive benchmark intelligence system to:
-- Track AI model performance across all major benchmarks
-- Detect performance overclaiming in model cards
-- Monitor performance drift over time
-- Generate standardized model comparison reports
+## Problem Statement
 
-## 🏗️ Architecture
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                  AI Model Benchmark Scraper                   │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │
-│  │   Source    │  │  Benchmark  │  │   Performance   │   │
-│  │   Scrapers  │──▶│  Normalizer │──▶│   Analyzer     │   │
-│  └─────────────┘  └─────────────┘  └─────────────────┘   │
-│                   └─────────────┘  ┌─────────────────┐   │
-│  ┌─────────────┐  ┌─────────────┐  │   REST API     │   │
-│  │ HuggingFace │  │  Database   │  │   (FastAPI)    │   │
-│  │ Papers Code │  │ (PostgreSQL)│  └─────────────────┘   │
-│  │   arXiv     │  └─────────────┘                          │
-│  └─────────────┘                                             │
-└─────────────────────────────────────────────────────────────┘
-```
 
-## 📊 Data Sources
+## Getting Started
 
-- **HuggingFace Model Cards**: Metrics, papers, comparisons
-- **Papers with Code**: Benchmark results, methodologies
-- **arXiv Papers**: Latest AI research papers
-- **OpenAI/ElevenLabs**: Official benchmark submissions
-- **LM-Eval**: Community benchmark results
+### Prerequisites
 
-## 🔧 Tech Stack
+- Git
+- Project runtime/toolchain for this repo
 
-- **Language**: Python
-- **Scraping**: Playwright, httpx
-- **Database**: PostgreSQL + pgvector
-- **API**: FastAPI
-- **Queue**: Redis + Celery
-- **ML**: Transformers, torch
-
-## 🚀 Getting Started
+### Local Setup
 
 ```bash
-# Clone the repo
-git clone https://github.com/yksanjo/ai-model-benchmark-scraper.git
-cd ai-model-benchmark-scraper
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment
-cp .env.example .env
-
-# Run the scraper
-python src/scrapers/huggingface_scraper.py
-
-# Start the API
-uvicorn src.api.main:app --reload
+make test
+make lint
 ```
 
-## 📈 Features
+## Usage
 
-- [ ] HuggingFace model metadata scraping
-- [ ] Papers with Code benchmark extraction
-- [ ] arXiv paper ingestion
-- [ ] Benchmark result normalization
-- [ ] Performance overclaiming detection
-- [ ] Model comparison API
-- [ ] Performance trend charts
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## 📊 Project Phases
+## Quality Standards
 
-### Phase 1: Data Collection
-- HuggingFace Hub scraper
-- Papers with Code miner
-- arXiv API integration
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### Phase 2: Normalization
-- Benchmark schema standardization
-- Metric unit conversion
-- Task categorization
+## Security
 
-### Phase 3: Analysis
-- Overclaiming detection
-- Performance scoring
-- Trend analysis
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### Phase 4: API & Dashboard
-- REST API
-- Model comparison UI
-- Performance charts
+## Contributing
 
-## 📝 License
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-MIT License - See [LICENSE](LICENSE) for details.
+## Roadmap
 
-## 👤 Author
+Track upcoming milestones, technical debt, and planned feature work.
 
-Yoshi Kondo - [@yksanjo](https://github.com/yksanjo)
+## Support
 
----
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-📊 Track AI model performance with precision!
+## License
+
+This project is released under the MIT License.
